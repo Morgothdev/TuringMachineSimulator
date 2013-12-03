@@ -1,0 +1,7 @@
+10101
+$
+q_s
+		0		1		$
+q_s		0,q_s,->	1,q_s,->	$,q_a,<-
+q_a		1,q_y,->	0,q_a,<-	1,q_y,<-
+q_y		accept		accept		accept	
