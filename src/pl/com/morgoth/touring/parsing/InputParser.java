@@ -14,11 +14,10 @@ public class InputParser {
 	private static final String WHITE_SPACES_REGEX = "[ \t]+";
 
 	public State sparse(List<String> lines, String blank) {
-		
+
 		String[] alphabet = readAlphabetFromHeader(lines.get(1));
-		
-		String[] statesNames = readStatesFromLines(lines.subList(2,
-				lines.size()));
+
+		String[] statesNames = readStatesFromLines(lines.subList(2, lines.size()));
 
 		Map<String, State> states = new HashMap<>();
 		for (String name : statesNames) {
@@ -32,31 +31,30 @@ public class InputParser {
 				String function = functions[j].trim();
 				if (function.equals("accept")) {
 					state.addAcceptMove(alphabet[j - 1]);
+				} else if (function.equals("reject")) {
+					state.addRejectMove(alphabet[j - 1]);
 				} else {
 					String[] functionElements = function.trim().split(",");
 					String nextcharacter = functionElements[0];
 					String nextStateName = functionElements[1];
-					Direction direction = (functionElements[2].equals("<-") ? Direction.LEFT
-							: Direction.RIGHT);
+					Direction direction = (functionElements[2].equals("<-") ? Direction.LEFT : Direction.RIGHT);
 					State out = states.get(nextStateName);
 					if (out == null) {
 						throw new IllegalArgumentException();
 					}
-					state.addMove(alphabet[j - 1], nextcharacter, out,
-							direction);
+					state.addMove(alphabet[j - 1], nextcharacter, out, direction);
 				}
 			}
 		}
 
-		System.out.println(toString(states.values(), alphabet,states.get(lines.get(0))));
+		System.out.println(toString(states.values(), alphabet, states.get(lines.get(0))));
 		return states.get(lines.get(0));
 	}
 
 	private String[] readStatesFromLines(List<String> lines) {
 		String[] statesStr = new String[lines.size()];
 		for (int i = 0; i < lines.size(); ++i) {
-			statesStr[i] = lines.get(i).trim().split(WHITE_SPACES_REGEX)[0]
-					.trim();
+			statesStr[i] = lines.get(i).trim().split(WHITE_SPACES_REGEX)[0].trim();
 		}
 		return statesStr;
 	}
