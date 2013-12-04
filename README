@@ -24,7 +24,7 @@ nextCharacter,nextState,headMoveDirection
 
 Examples You can find in examples folder.
 
-Simple run:
+Sample run:
 $ ant
 $ java -jar turing.jar examples/increment 1011
 
