@@ -11,8 +11,8 @@ Turing machine simulator, configured by a file which must be given in the form:
 /the beginning of the print simulator
 /each line starts with "/"
 initial value of tape (without blank characters)
-blank character, np $ (only not "/")
-starting state, np start, q_s ..
+blank character, eq $ (only not "/")
+starting state, eq start, q_s ..
 table of transition function, in form:
 	character	character	character	...
 state	function	function	function	...
