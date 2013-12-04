@@ -16,16 +16,15 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 
 		if (args[0].equals("--help")) {
-			System.out
-					.println("Prepare text file with data for machine in format:\n"
-							+ "data\nblankCharacter\nstarting state\naction table\n\nExample:");
+			System.out.println("Prepare text file with data for machine in format:\n"
+					+ "data\nblankCharacter\nstarting state\naction table\n\nExample:");
 			System.out.println("10010101011");
 			System.out.println("$");
 			System.out.println("q_s");
 			System.out.println("\t0\t\t1\t\t$");
 			System.out.println("q_s\t0,q_s,->\t1,q_s,->\t$,q_a,<-");
 			System.out.println("q_a\t1,q_y,->\t0,q_a,<-\t1,q_y,<-");
-			System.out.println("q_y\taccept\t\taccept\t\taccept\n");
+			System.out.println("q_y\taccept\t\treject\t\taccept\n");
 			return;
 		}
 
@@ -44,8 +43,7 @@ public class Main {
 		String data = linesList.get(0);
 		String blankCharacter = linesList.get(1);
 
-		State starting = new InputParser().sparse(
-				linesList.subList(2, linesList.size()), blankCharacter);
+		State starting = new InputParser().sparse(linesList.subList(2, linesList.size()), blankCharacter);
 		TouringMachine m = new TouringMachine(data, blankCharacter, starting);
 		m.run();
 	}
