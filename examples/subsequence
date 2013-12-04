@@ -1,6 +1,6 @@
 /This machine tests if input word in form:
 /x#y where x,y={0,1}+
-/satifies property: x is subsequence of y
+/satisfies property: x is subsequence of y
 
 $
 q_s

@@ -25,6 +25,8 @@ nextCharacter,nextState,headMoveDirection
 Examples You can find in examples folder.
 
 Sample run:
+$ git clone git@github.com:Morgothdev/TuringMachineSimulator.git
+$ cd ./TuringMachineSimulator
 $ ant
 $ java -jar turing.jar examples/increment 1011
 
