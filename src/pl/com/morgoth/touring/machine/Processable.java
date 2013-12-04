@@ -1,7 +1,5 @@
-package pl.com.morgoth.touring.process;
+package pl.com.morgoth.touring.machine;
 
-import pl.com.morgoth.touring.machine.Direction;
-import pl.com.morgoth.touring.machine.State;
 
 public interface Processable {
 

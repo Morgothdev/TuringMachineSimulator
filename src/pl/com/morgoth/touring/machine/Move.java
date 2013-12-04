@@ -1,6 +1,5 @@
 package pl.com.morgoth.touring.machine;
 
-import pl.com.morgoth.touring.process.Processable;
 
 public class Move {
 
@@ -27,7 +26,6 @@ public class Move {
 		tasma.putChar(character);
 		tasma.setState(outState);
 		tasma.moveHead(directionAfter);
-		System.out.println("zastosowano " + toString());
 		return false;
 	}
 }
@@ -40,7 +38,7 @@ class AcceptMove extends Move {
 
 	@Override
 	public boolean process(Processable tasma) {
-		System.out.println("accepted");
+		System.out.println("accepted\n");
 		return true;
 	}
 
@@ -48,7 +46,6 @@ class AcceptMove extends Move {
 	public String toString() {
 		return "accept";
 	}
-
 }
 
 class RejectMove extends Move {
@@ -59,7 +56,7 @@ class RejectMove extends Move {
 
 	@Override
 	public boolean process(Processable tasma) {
-		System.out.println("rejected");
+		System.out.println("rejected\n");
 		return true;
 	}
 

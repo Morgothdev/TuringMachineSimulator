@@ -1,4 +1,8 @@
-11#000
+/This machine tests whether the input word 
+/is in the form: bin(n)#0^n
+/where bin(n) is binary form of number n
+/and 0^n is sequence of 0 if length n
+
 $
 q_s
 	1		0		#		$

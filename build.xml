@@ -45,7 +45,7 @@
 				<attribute name="Main-Class" value="pl.com.morgoth.touring.Main" />
 				<attribute name="Class-Path" value="." />
 			</manifest>
-			<fileset dir="/home/mateusz/kodzenie/eclipse/eclipse-juno/workspace/TuringMachineSimulator/bin" />
+			<fileset dir="bin" />
 		</jar>
 	</target>
 </project>

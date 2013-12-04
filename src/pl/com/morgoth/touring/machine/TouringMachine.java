@@ -3,8 +3,6 @@ package pl.com.morgoth.touring.machine;
 import java.util.LinkedList;
 import java.util.List;
 
-import pl.com.morgoth.touring.process.Processable;
-
 public class TouringMachine implements Processable{
 
 	private int index = 0;
@@ -38,7 +36,9 @@ public class TouringMachine implements Processable{
 				System.out.print(" ");
 			}
 			System.out.println("^");
-			ruch = actualState.getMove(tape.get(index)); 
+			ruch = actualState.getMove(tape.get(index));
+			System.out.println("function used: ("+actualState.name()+", "+tape.get(index)+") => ("+ ruch.toString()+")");
+			System.out.println();
 		}while(ruch.process(this)==false);
 	}
 

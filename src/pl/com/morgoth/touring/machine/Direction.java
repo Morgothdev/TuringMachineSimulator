@@ -14,4 +14,14 @@ public enum Direction {
 		}
 
 	};
+
+	public static Direction valueof(String text) {
+		if (text.equals("->")) {
+			return RIGHT;
+		} else if (text.equals("<-")) {
+			return LEFT;
+		} else {
+			throw new IllegalArgumentException("Unknown direction \"" + text+"\"");
+		}
+	}
 }
